@@ -1,0 +1,126 @@
+"""
+x = open("demofile3.txt", "w")
+x.write("Woops! I have deleted the content!")
+x.close()
+"""
+
+x = open("demofile3.txt", "a")
+#x.close()
+#open and read the file after the appending:
+#x = open("demofile3.txt", "r")
+#print(f.read())
+
+
+
+print("""ilaç listesi:
+1. Kaletra
+2. Plaquenil
+3. Tamiflu
+4. Favipravir
+5. Azax
+
+q. Çıkış
+""")
+
+import datetime
+from datetime import timedelta
+bugun = datetime.date.today()
+bugun_format = bugun.strftime("%d.%m.%Y")
+
+print("\t\t\t\t\t\t\t\t\t\t\t", bugun_format)
+print("""\t\t\tDr. Siyami Ersek Göğüs Kalp ve Damar Cerrahisi 
+\t\t\t\tEğitim ve Araştırma Hastanesi 
+\t\t\t\t\tEczane Birimi
+""")
+
+ilac1 = list()
+hasta_adi = input("Hasta Adı:")
+x.write(hasta_adi)
+
+while True:
+    ilac = input("\nİlaç No:")
+    ilac1.append(ilac)
+    if ilac == "2":
+        p = "Plaquenil 200mg"
+        x.write(p)
+        print(p, "\n")
+        print(bugun, 4, "adet")
+        print(bugun + timedelta(days=1), 2, "adet")
+        print(bugun + timedelta(days=2), 2, "adet")
+        print(bugun + timedelta(days=3), 2, "adet")
+        print(bugun + timedelta(days=4), 2, "adet")
+    elif ilac == "3":
+        t = "Tamiflu 75mg"
+        x.write(t)
+        print(t, "\n")
+        print(bugun, 2, "adet")
+        print(bugun + timedelta(days=1), 2, "adet")
+        print(bugun + timedelta(days=2), 2, "adet")
+        print(bugun + timedelta(days=3), 2, "adet")
+        print(bugun + timedelta(days=4), 2, "adet")
+    elif ilac == "1":
+        k = "Kaletra"
+        x.write(k)
+        print(k, "\n")
+        print(bugun, 2, "adet")
+        print(bugun + timedelta(days=1), 2, "adet")
+        print(bugun + timedelta(days=2), 2, "adet")
+        print(bugun + timedelta(days=3), 2, "adet")
+        print(bugun + timedelta(days=4), 2, "adet")
+        print(bugun + timedelta(days=5), 2, "adet")
+        print(bugun + timedelta(days=6), 2, "adet")
+        print(bugun + timedelta(days=7), 2, "adet")
+        print(bugun + timedelta(days=8), 2, "adet")
+        print(bugun + timedelta(days=9), 2, "adet")
+        print(bugun + timedelta(days=10), 2, "adet")
+    elif ilac == "4":
+        f = "Favipiravir 200mg"
+        x.write(f)
+        print(f, "\n")
+        print(bugun, 16, "adet")
+        print(bugun + timedelta(days=1), 6, "adet")
+        print(bugun + timedelta(days=2), 6, "adet")
+        print(bugun + timedelta(days=3), 6, "adet")
+        print(bugun + timedelta(days=4), 6, "adet")
+        print(bugun + timedelta(days=5), 6, "adet")
+    elif ilac == "5":
+        a = "Azax 500mg"
+        x.write(a)
+        print(a, "\n")
+        print(bugun, 1, "adet")
+        print(bugun + timedelta(days=1), 0.5, "adet")
+        print(bugun + timedelta(days=2), 0.5, "adet")
+        print(bugun + timedelta(days=3), 0.5, "adet")
+        print(bugun + timedelta(days=4), 0.5, "adet")
+    elif ilac == "q":
+        for index in ilac1:
+            if index == "2":
+                print(
+                    "\tToplam", 12, "adet", p,
+                    "{}'den {}'e kadar kullanılmak üzere verilmiştir.".format(
+                        bugun, bugun + timedelta(days=4)))
+            if index == "3":
+                print(
+                    "\tToplam", 10, "adet", t,
+                    "{}'den {}'e kadar kullanılmak üzere verilmiştir.".format(
+                        bugun, bugun + timedelta(days=4)))
+            if index == "4":
+                print(
+                    "\tToplam", 46, "adet", f,
+                    "{}'den {}'e kadar kullanılmak üzere verilmiştir.".format(
+                        bugun, bugun + timedelta(days=5)))
+            if index == "1":
+                print(
+                    "\tToplam", 20, "adet", k,
+                    "{}'den {}'e kadar kullanılmak üzere verilmiştir.".format(
+                        bugun, bugun + timedelta(days=10)))
+            if index == "5":
+                print(
+                    "\tToplam", 3, "adet", a,
+                    "{}'den {}'e kadar kullanılmak üzere verilmiştir.".format(
+                        bugun, bugun + timedelta(days=4)))
+        break
+x.close()
+
+print("\nTeslim Eden:", end="\t\t\t\t\t\t")
+print("Teslim Alan:")
